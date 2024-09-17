@@ -53,8 +53,9 @@ class Config(object):
                 sys.exit(1)
         else:
             self.v6addr = args.ipv6
+            
         if args.mac is None:
-            self.macaddr = netifaces.ifaddresses(self.default_if)[netifaces.AF_LINK][0]['addr']
+            self.macaddr = '00:00:00:00:00:00'
         else:
             self.macaddr = args.mac
 
